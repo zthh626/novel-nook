@@ -8,6 +8,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
+      - DATABASE_URL=postgresql://user:password@db:5432/bookstore?schema=public
     command: sh -c "npm install && npm run dev"
     depends_on:
       - db
