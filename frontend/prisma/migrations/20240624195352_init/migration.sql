@@ -25,7 +25,7 @@ CREATE TABLE "Book" (
     "author_id" INTEGER NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT,
-    "publishedAt" TIMESTAMP(3),
+    "published_date" TIMESTAMP(3),
     "isbn" TEXT,
     "image_url" TEXT,
 
@@ -37,7 +37,7 @@ CREATE TABLE "Favourite" (
     "id" SERIAL NOT NULL,
     "user_id" INTEGER NOT NULL,
     "book_id" INTEGER NOT NULL,
-    "add_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "added_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Favourite_pkey" PRIMARY KEY ("id")
 );

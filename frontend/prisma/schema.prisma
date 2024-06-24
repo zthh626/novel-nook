@@ -31,22 +31,22 @@ model Author {
 }
 
 model Book {
-  id          Int         @id @default(autoincrement())
-  author      Author      @relation(fields: [author_id], references: [id])
-  author_id   Int
-  title       String
-  description String?
-  publishedAt DateTime?
-  isbn        String?
-  image_url   String?
-  Favourite   Favourite[]
+  id             Int         @id @default(autoincrement())
+  author         Author      @relation(fields: [author_id], references: [id])
+  author_id      Int
+  title          String
+  description    String?
+  published_date DateTime?
+  isbn           String?
+  image_url      String?
+  Favourite      Favourite[]
 }
 
 model Favourite {
-  id      Int      @id @default(autoincrement())
-  user    User     @relation(fields: [user_id], references: [id])
-  user_id Int
-  book    Book     @relation(fields: [book_id], references: [id])
-  book_id Int
-  add_at  DateTime @default(now())
+  id       Int      @id @default(autoincrement())
+  user     User     @relation(fields: [user_id], references: [id])
+  user_id  Int
+  book     Book     @relation(fields: [book_id], references: [id])
+  book_id  Int
+  added_at DateTime @default(now())
 }

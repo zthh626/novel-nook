@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "1984",
+    "author_id": 1,
+    "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
+    "published_date": "1949-06-08",
+    "isbn": "9780451524935",
+    "image_url": "https://covers.openlibrary.org/b/id/8221241-L.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author_id": 2,
+    "description": "The first book in the Harry Potter series, introducing the young wizard Harry Potter.",
+    "published_date": "1997-06-26",
+    "isbn": "9780439708180",
+    "image_url": "https://covers.openlibrary.org/b/id/7888782-L.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Hobbit",
+    "author_id": 3,
+    "description": "A fantasy novel and children's book by J.R.R. Tolkien, precursor to The Lord of the Rings.",
+    "published_date": "1937-09-21",
+    "isbn": "9780547928227",
+    "image_url": "https://covers.openlibrary.org/b/id/7984916-L.jpg"
+  },
+  {
+    "id": 4,
+    "title": "To Kill a Mockingbird",
+    "author_id": 4,
+    "description": "A novel by Harper Lee published in 1960, widely studied in schools and known for its themes of racial injustice.",
+    "published_date": "1960-07-11",
+    "isbn": "9780061120084",
+    "image_url": "https://covers.openlibrary.org/b/id/8221671-L.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Great Gatsby",
+    "author_id": 5,
+    "description": "A novel by F. Scott Fitzgerald that critiques the American Dream during the Jazz Age.",
+    "published_date": "1925-04-10",
+    "isbn": "9780743273565",
+    "image_url": "https://covers.openlibrary.org/b/id/8221256-L.jpg"
+  }
+]
