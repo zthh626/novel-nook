@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "npx prisma migrate dev"
   },
   "dependencies": {
+    "@prisma/client": "^5.15.1",
     "next": "14.2.4",
     "prisma": "^5.15.1",
     "react": "^18",
