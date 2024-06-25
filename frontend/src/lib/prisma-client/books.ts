@@ -7,8 +7,10 @@ class Books {
     this.client = client;
   }
 
-  getAll() {
-    return this.client.book.findMany({});
+  getAllWithAuthorName() {
+    return this.client.book.findMany({
+      include: { author: { select: { name: true } } },
+    });
   }
 }
 

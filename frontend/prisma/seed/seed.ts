@@ -43,7 +43,7 @@ async function main() {
         description: book.description,
         published_date: new Date(book.published_date),
         isbn: book.isbn,
-        image_url: book.cover_image,
+        image_url: book.image_url,
       },
     });
   }
