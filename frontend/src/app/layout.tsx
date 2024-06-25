@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Bookstore",
+  title: "NovelNook",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col w-screen h-screen">
         <Header />
-        <div>{children}</div>
+        <div className="w-full h-full">{children}</div>
       </body>
     </html>
   );
