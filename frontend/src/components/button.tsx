@@ -9,7 +9,6 @@ export function Button({
 }) {
   return (
     <button
-      type="button"
       className={classNames(
         theme === "primary"
           ? "py-2.5 px-5 mb-2 text-sm font-medium text-white bg-blue-700 rounded-lg dark:bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none me-2 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
