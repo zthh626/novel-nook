@@ -8,7 +8,7 @@ export function ImageLoader({
   alt,
   classes,
 }: {
-  src: string;
+  src?: string | null;
   alt: string;
   classes: string;
 }) {
@@ -17,15 +17,17 @@ export function ImageLoader({
   return (
     <div className={`relative ${classes}`}>
       <div
-        className={`absolute inset-0 bg-gray-300 animate-pulse ${!loading && "hidden"}`}
+        className={`absolute inset-0 bg-gray-200 animate-pulse ${!loading && src && "hidden"}`}
       ></div>
-      <Image
-        fill={true}
-        objectFit="cover"
-        src={src}
-        alt={alt}
-        onLoad={() => setLoading(false)}
-      />
+      {src && (
+        <Image
+          fill={true}
+          objectFit="contain"
+          src={src}
+          alt={alt}
+          onLoad={() => setLoading(false)}
+        />
+      )}
     </div>
   );
 }
