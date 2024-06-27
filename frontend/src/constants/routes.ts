@@ -7,4 +7,8 @@ export const routes = [
     name: "Books",
     href: "/books",
   },
+  {
+    name: "Favorites",
+    href: "/favorites",
+  },
 ];
