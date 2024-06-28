@@ -46,11 +46,9 @@ export function AuthForm({
           </div>
         );
       })}
-      {state?.message !== "success" && (
-        <p className="self-end font-bold text-red-500" aria-live="polite">
-          {state?.message}
-        </p>
-      )}
+      <p className="self-end font-bold text-red-500" aria-live="polite">
+        {state?.message === "success" ? "" : state?.message}
+      </p>
       <Button text={submitLabel} />
     </form>
   );

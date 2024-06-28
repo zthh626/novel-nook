@@ -10,7 +10,7 @@ export default function Login() {
         className="self-end p-5 text-blue-500 hover:underline hover:blue-600"
         href="/auth/signup"
       >
-        <p>Don't have an account?</p>
+        <p>Don&apos;t have an account?</p>
       </Link>
     </div>
   );
