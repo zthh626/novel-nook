@@ -1,19 +1,33 @@
 "use server";
 
-import jwt from "jsonwebtoken";
+import { jwtVerify, SignJWT } from "jose";
 
 const secretKey = process.env.SECRET_KEY ?? "";
+const key = new TextEncoder().encode(secretKey);
 
 if (!secretKey) {
   throw Error("Secret key not found.");
 }
 
 export async function createJWT(payload: { userId: number }) {
-  return jwt.sign(payload, secretKey, { expiresIn: "1h" });
+  const expires = new Date();
+  expires.setHours(expires.getHours() + 1);
+
+  return {
+    token: await new SignJWT(payload)
+      .setProtectedHeader({ alg: "HS256" })
+      .setIssuedAt()
+      .setExpirationTime("1 hour from now")
+      .sign(key),
+    expires,
+  };
 }
 
 export async function verifyJWT(token: string) {
-  return jwt.verify(token, secretKey);
+  const { payload } = await jwtVerify(token, key, {
+    algorithms: ["HS256"],
+  });
+  return payload;
 }
 
 function generateSalt(length = 16) {
@@ -36,7 +50,7 @@ export async function hashPassword(password: string) {
 }
 
 export async function verifyPassword(password: string, hash: string) {
-  const [_, salt] = hash.split(".");
+  const [_hash, salt] = hash.split(".");
   const hashedPassword = await hashPasswordWithSalt(password, salt);
-  return hashedPassword === hash;
+  return hashedPassword === _hash;
 }

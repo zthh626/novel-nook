@@ -13,7 +13,6 @@ const fields = [
 
 const initialState = {
   message: "",
-  token: null,
 };
 
 export function AuthForm({
@@ -27,8 +26,10 @@ export function AuthForm({
   const [state, formAction] = useFormState(action, initialState);
 
   useEffect(() => {
-    console.log(state.token);
-  }, [state.token]);
+    if (state.message === "success") {
+      window.location.href = "/favorites";
+    }
+  }, [state.message]);
 
   return (
     <form className="flex flex-col space-y-5" action={formAction}>
@@ -45,9 +46,11 @@ export function AuthForm({
           </div>
         );
       })}
-      <p className="self-end font-bold text-red-500" aria-live="polite">
-        {state?.message}
-      </p>
+      {state?.message !== "success" && (
+        <p className="self-end font-bold text-red-500" aria-live="polite">
+          {state?.message}
+        </p>
+      )}
       <Button text={submitLabel} />
     </form>
   );

@@ -10,7 +10,7 @@ export default function Signup() {
         className="self-end p-5 text-blue-500 hover:underline hover:blue-600"
         href="/auth/login"
       >
-        <p>Login</p>
+        <p>Already have an account?</p>
       </Link>
     </div>
   );
