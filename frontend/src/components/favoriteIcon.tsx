@@ -2,7 +2,7 @@
 
 import { toggleFavorite } from "@/lib/favorites/actions";
 import { ImageLoader } from "./imageLoader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Favourite } from "@prisma/client";
 
 export function FavoriteIcon({
@@ -17,6 +17,10 @@ export function FavoriteIcon({
   const [isFilled, setIsFilled] = useState(
     favorite?.length && favorite?.length > 0 ? true : false,
   );
+
+  useEffect(() => {
+    setIsFilled(favorite?.length && favorite?.length > 0 ? true : false);
+  }, [favorite, setIsFilled]);
 
   return (
     <div
