@@ -2,7 +2,7 @@ import { Book, Favourite } from "@prisma/client";
 import Link from "next/link";
 import { ImageLoader } from "./imageLoader";
 import { generateBookSlug } from "@/util";
-import { FavoriteIcon } from "./favoriteIcon";
+import { FavoriteToggleButton } from "./favoriteToggleButton";
 
 interface BookWithAuthor extends Book {
   author: { name: string };
@@ -37,7 +37,7 @@ export function BookRow({
             {book?.description}
           </p>
         </div>
-        <FavoriteIcon
+        <FavoriteToggleButton
           bookId={book.id}
           favorite={book.Favourite}
           updatePaths={updatePaths}

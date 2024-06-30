@@ -5,7 +5,7 @@ import { ImageLoader } from "./imageLoader";
 import { useEffect, useState } from "react";
 import { Favourite } from "@prisma/client";
 
-export function FavoriteIcon({
+export function FavoriteToggleButton({
   bookId,
   favorite,
   updatePaths,
