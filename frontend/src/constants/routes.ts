@@ -8,6 +8,10 @@ export const routes = [
     href: "/books",
   },
   {
+    name: "Authors",
+    href: "/authors",
+  },
+  {
     name: "Favorites",
     href: "/favorites",
   },
