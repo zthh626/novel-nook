@@ -1,10 +1,13 @@
+import { FavoriteIcon } from "@/components/favoriteIcon";
 import { ImageLoader } from "@/components/imageLoader";
+import { verifyJWT } from "@/lib/auth";
 import { books } from "@/lib/prisma-client";
 import {
   generateAuthorSlug,
   generateBookSlug,
   getCurrentDateHumanReadable,
 } from "@/util";
+import { cookies } from "next/headers";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -25,7 +28,12 @@ export default async function Book({ params }: { params: { id: string } }) {
     throw Error("404 - Book not found.");
   }
 
-  const book = await books.getBookAndAuthor(bookId);
+  const session = cookies().get("session");
+  const { userId } = session?.value
+    ? await verifyJWT(session.value)
+    : { userId: undefined };
+
+  const book = await books.getBookAndAuthor(bookId, userId);
 
   if (!book) {
     throw Error("404 - Book not found.");
@@ -48,7 +56,10 @@ export default async function Book({ params }: { params: { id: string } }) {
         )}
       </div>
       <div className="py-5 px-10 space-y-3">
-        <h2 className="text-3xl font-bold">{book.title}</h2>
+        <div className="flex flex-row items-center py-2 space-x-3">
+          <h2 className="text-3xl font-bold">{book.title}</h2>
+          <FavoriteIcon bookId={book.id} favorite={book.Favourite} />
+        </div>
         <Link href={`/authors/${generateAuthorSlug(book.author)}`}>
           <h3 className="text-xl font-semibold hover:underline hover:cursor-pointer">
             {book.author.name}

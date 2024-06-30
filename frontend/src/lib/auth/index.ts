@@ -27,7 +27,7 @@ export async function verifyJWT(token: string) {
   const { payload } = await jwtVerify(token, key, {
     algorithms: ["HS256"],
   });
-  return payload;
+  return payload as { userId: number };
 }
 
 function generateSalt(length = 16) {

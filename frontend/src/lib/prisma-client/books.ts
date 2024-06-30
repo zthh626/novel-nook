@@ -1,16 +1,22 @@
 import { PrismaClient } from "@prisma/client";
 
-class Books {
+export class Books {
   private client: PrismaClient;
 
   constructor(client: PrismaClient) {
     this.client = client;
   }
 
-  getBookAndAuthor(id: number) {
+  getBookAndAuthor(id: number, userId: number = -1) {
     return this.client.book.findUnique({
       where: { id },
-      include: { author: true },
+      include: {
+        author: true,
+        Favourite: {
+          where: { user_id: userId },
+          take: 1,
+        },
+      },
     });
   }
 
@@ -18,9 +24,15 @@ class Books {
     return this.client.book.findMany();
   }
 
-  getAllWithAuthorName() {
+  getAllWithAuthorNameAndFavorite(userId: number = -1) {
     return this.client.book.findMany({
-      include: { author: { select: { name: true } } },
+      include: {
+        author: { select: { name: true } },
+        Favourite: {
+          where: { user_id: userId },
+          take: 1,
+        },
+      },
     });
   }
 
@@ -31,5 +43,3 @@ class Books {
     });
   }
 }
-
-export default Books;

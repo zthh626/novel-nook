@@ -30,7 +30,7 @@ export function HeaderAuthButtons() {
               window.location.href = "/";
             });
           }}
-          text="HELLO"
+          text="Signout"
           theme="secondary"
         />
       ) : (
