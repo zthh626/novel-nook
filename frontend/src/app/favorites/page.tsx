@@ -1,16 +1,12 @@
 import { BookRow } from "@/components/bookRow";
 import { BreadCrumbs } from "@/components/breadCrumbs";
 import { Button } from "@/components/button";
-import { verifyJWT } from "@/lib/auth";
+import { useUserId } from "@/hooks/useUserId";
 import { favorites } from "@/lib/prisma-client";
-import { cookies } from "next/headers";
 import Link from "next/link";
 
 export default async function Favorites() {
-  const session = cookies().get("session");
-  const { userId } = session?.value
-    ? await verifyJWT(session.value)
-    : { userId: undefined };
+  const userId = await useUserId();
   const userFavorites = userId ? await favorites.getAllBooks(userId) : [];
 
   return (

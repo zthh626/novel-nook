@@ -1,13 +1,9 @@
 import { BookRow } from "@/components/bookRow";
-import { verifyJWT } from "@/lib/auth";
+import { useUserId } from "@/hooks/useUserId";
 import { books } from "@/lib/prisma-client";
-import { cookies } from "next/headers";
 
 export default async function Books() {
-  const session = cookies().get("session");
-  const { userId } = session?.value
-    ? await verifyJWT(session.value)
-    : { userId: undefined };
+  const userId = await useUserId();
   const booksData = await books.getAllWithAuthorNameAndFavorite(userId);
 
   return (

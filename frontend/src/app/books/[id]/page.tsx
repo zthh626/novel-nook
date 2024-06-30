@@ -1,13 +1,12 @@
 import { FavoriteIcon } from "@/components/favoriteIcon";
 import { ImageLoader } from "@/components/imageLoader";
-import { verifyJWT } from "@/lib/auth";
+import { useUserId } from "@/hooks/useUserId";
 import { books } from "@/lib/prisma-client";
 import {
   generateAuthorSlug,
   generateBookSlug,
   getCurrentDateHumanReadable,
 } from "@/util";
-import { cookies } from "next/headers";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -28,11 +27,7 @@ export default async function Book({ params }: { params: { id: string } }) {
     throw Error("404 - Book not found.");
   }
 
-  const session = cookies().get("session");
-  const { userId } = session?.value
-    ? await verifyJWT(session.value)
-    : { userId: undefined };
-
+  const userId = await useUserId();
   const book = await books.getBookAndAuthor(bookId, userId);
 
   if (!book) {
