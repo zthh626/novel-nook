@@ -35,6 +35,22 @@ This is an online bookstore application with the following features:
 - Docker Compose
 - Jest
 
+## App Layout
+
+This app has the following routes:
+
+- /
+- /auth
+  - /auth/login
+  - /auth/signup
+- /authors
+  - /authors/[id]
+- /books
+  - /books/[id]
+- /favorites
+
+[More details here](/src/app/README.md)
+
 ## Setup and Running Instructions
 
 Docker compose for containerization and easy project setup.
