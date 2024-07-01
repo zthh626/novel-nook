@@ -1,10 +1,10 @@
 "use client";
 
-import { useFormState } from "react-dom";
-import { Button } from "./button";
 import { login, signup } from "@/lib/auth/actions";
 import { useEffect } from "react";
-import { Input } from "./input";
+import { useFormState } from "react-dom";
+import { Input } from "./base/Input";
+import { Button } from "./base/Button";
 
 const fields = [
   { type: "email", label: "Email" },

@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "./button";
 import { verifyJWT } from "@/lib/auth";
 import { signout } from "@/lib/auth/actions";
 import { getCookie } from "cookies-next";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Button } from "../base/Button";
 
 export function HeaderAuthButtons() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

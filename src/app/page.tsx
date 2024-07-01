@@ -1,4 +1,4 @@
-import { SearchInput } from "@/components/searchInput";
+import { SearchInput } from "@/components/SearchInput";
 
 export default async function Home() {
   return (

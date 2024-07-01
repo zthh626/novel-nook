@@ -1,7 +1,7 @@
 import { routes } from "@/constants/routes";
 import Link from "next/link";
-import { NavLink } from "./navLink";
-import { HeaderAuthButtons } from "./headerAuthButtons";
+import { NavLink } from "../navigation/NavLink";
+import { HeaderAuthButtons } from "./HeaderAuthButtons";
 
 export function Header() {
   return (

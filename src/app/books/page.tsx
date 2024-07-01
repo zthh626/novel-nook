@@ -1,4 +1,4 @@
-import { BookRow } from "@/components/bookRow";
+import { BookRow } from "@/components/list/BookRow";
 import { useSearchParam } from "@/hooks/useSearchParam";
 import { useUserId } from "@/hooks/useUserId";
 import { books } from "@/lib/prisma-client";

@@ -1,4 +1,4 @@
-import { AuthorRow } from "@/components/authorRow";
+import { AuthorRow } from "@/components/list/AuthorRow";
 import { useSearchParam } from "@/hooks/useSearchParam";
 import { authors } from "@/lib/prisma-client";
 

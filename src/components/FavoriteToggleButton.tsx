@@ -1,9 +1,9 @@
 "use client";
 
 import { toggleFavorite } from "@/lib/favorites/actions";
-import { ImageLoader } from "./imageLoader";
-import { useEffect, useState } from "react";
 import { Favourite } from "@prisma/client";
+import { useEffect, useState } from "react";
+import { ImageLoader } from "./base/ImageLoader";
 
 export function FavoriteToggleButton({
   bookId,

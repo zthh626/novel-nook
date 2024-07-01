@@ -1,6 +1,6 @@
-import { BookRow } from "@/components/bookRow";
-import { BreadCrumbs } from "@/components/breadCrumbs";
-import { Button } from "@/components/button";
+import { Button } from "@/components/base/Button";
+import { BookRow } from "@/components/list/BookRow";
+import { BreadCrumbs } from "@/components/navigation/BreadCrumbs";
 import { useUserId } from "@/hooks/useUserId";
 import { favorites } from "@/lib/prisma-client";
 import Link from "next/link";

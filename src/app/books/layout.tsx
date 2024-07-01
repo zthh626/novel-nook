@@ -1,5 +1,5 @@
-import { BreadCrumbs } from "@/components/breadCrumbs";
-import { SearchInput } from "@/components/searchInput";
+import { SearchInput } from "@/components/SearchInput";
+import { BreadCrumbs } from "@/components/navigation/BreadCrumbs";
 
 export default function BooksLayout({
   children,

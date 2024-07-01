@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { HTMLProps } from "react";
-import { Button } from "./button";
 
 export function Input(props: HTMLProps<HTMLInputElement>) {
   const _classNames = classNames(

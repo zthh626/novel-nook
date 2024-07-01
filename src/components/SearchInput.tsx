@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "./input";
-import { bookSearch } from "@/lib/search/actions";
-import { Button } from "./button";
 import { Book } from "@prisma/client";
 import { redirect, usePathname } from "next/navigation";
+import { Input } from "./base/Input";
+import { Button } from "./base/Button";
 
 export function SearchInput({ searchType }: { searchType: "book" | "author" }) {
   const path = usePathname();

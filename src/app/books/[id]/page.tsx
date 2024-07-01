@@ -1,5 +1,5 @@
-import { FavoriteToggleButton } from "@/components/favoriteToggleButton";
-import { ImageLoader } from "@/components/imageLoader";
+import { ImageLoader } from "@/components/base/ImageLoader";
+import { FavoriteToggleButton } from "@/components/FavoriteToggleButton";
 import { useUserId } from "@/hooks/useUserId";
 import { books } from "@/lib/prisma-client";
 import {

@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { ImageLoader } from "./imageLoader";
-import { generateBookSlug } from "@/util";
-import { FavoriteToggleButton } from "./favoriteToggleButton";
 import { BookWithAuthor } from "@/lib/interfaces";
+import { generateBookSlug } from "@/util";
+import Link from "next/link";
+import { ImageLoader } from "../base/ImageLoader";
+import { FavoriteToggleButton } from "../FavoriteToggleButton";
 
 export function BookRow({
   book,

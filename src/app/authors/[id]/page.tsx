@@ -1,4 +1,4 @@
-import { BookRow } from "@/components/bookRow";
+import { BookRow } from "@/components/list/BookRow";
 import { useUserId } from "@/hooks/useUserId";
 import { authors, books } from "@/lib/prisma-client";
 import { generateAuthorSlug, getCurrentDateHumanReadable } from "@/util";
