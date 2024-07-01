@@ -1,6 +1,6 @@
 # NovelNook
 
-[Screenshots](/docs/images/screenshots/)
+[Screenshots](/docs/images/screenshots/README.md)
 
 This is an online bookstore application with the following features:
 
