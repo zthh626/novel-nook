@@ -33,6 +33,7 @@ This is an online bookstore application with the following features:
 ### Tooling
 
 - Docker Compose
+- Jest
 
 ## Setup and Running Instructions
 
@@ -62,6 +63,12 @@ docker-compose up
 This command uses the `DATABASE_URL` in the `.env` file. The mock data for this seed is located at [authors.json](/prisma/seed/authors.json) and [books.json](/prisma/seed/books.json).
 
 4. Access the application at `http://localhost:3000/`
+
+## Testing
+
+Currently, only unit tests for [auth](/src/lib/auth/index.ts)
+
+1. Run `npm run test`
 
 ## Database
 
