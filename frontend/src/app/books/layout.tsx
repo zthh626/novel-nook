@@ -11,7 +11,7 @@ export default function BooksLayout({
       <div className="flex flex-col space-y-2">
         <BreadCrumbs />
         <div className="self-end w-full max-w-lg">
-          <SearchInput />
+          <SearchInput searchType="book" />
         </div>
       </div>
       <div className="flex flex-col m-auto w-full max-w-5xl h-full">

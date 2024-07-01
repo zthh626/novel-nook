@@ -1,13 +1,8 @@
-import { Book, Favourite } from "@prisma/client";
 import Link from "next/link";
 import { ImageLoader } from "./imageLoader";
 import { generateBookSlug } from "@/util";
 import { FavoriteToggleButton } from "./favoriteToggleButton";
-
-interface BookWithAuthor extends Book {
-  author: { name: string };
-  Favourite: Favourite[];
-}
+import { BookWithAuthor } from "@/lib/interfaces";
 
 export function BookRow({
   book,

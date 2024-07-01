@@ -1,7 +1,7 @@
 import { BreadCrumbs } from "@/components/breadCrumbs";
 import { SearchInput } from "@/components/searchInput";
 
-export default function BooksLayout({
+export default function AuthorsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export default function BooksLayout({
       <div className="flex flex-col space-y-2">
         <BreadCrumbs />
         <div className="self-end w-full max-w-lg">
-          <SearchInput />
+          <SearchInput searchType="author" />
         </div>
       </div>
       <div className="flex flex-col m-auto w-full max-w-5xl h-full">

@@ -1,4 +1,4 @@
-import { FavoriteIcon } from "@/components/favoriteIcon";
+import { FavoriteToggleButton } from "@/components/favoriteToggleButton";
 import { ImageLoader } from "@/components/imageLoader";
 import { useUserId } from "@/hooks/useUserId";
 import { books } from "@/lib/prisma-client";
@@ -53,7 +53,7 @@ export default async function Book({ params }: { params: { id: string } }) {
       <div className="py-5 px-10 space-y-3">
         <div className="flex flex-row items-center py-2 space-x-3">
           <h2 className="text-3xl font-bold">{book.title}</h2>
-          <FavoriteIcon bookId={book.id} favorite={book.Favourite} />
+          <FavoriteToggleButton bookId={book.id} favorite={book.Favourite} />
         </div>
         <Link href={`/authors/${generateAuthorSlug(book.author)}`}>
           <h3 className="text-xl font-semibold hover:underline hover:cursor-pointer">

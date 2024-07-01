@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { HTMLProps } from "react";
+import { Button } from "./button";
 
 export function Input(props: HTMLProps<HTMLInputElement>) {
   const _classNames = classNames(
@@ -8,5 +9,5 @@ export function Input(props: HTMLProps<HTMLInputElement>) {
   );
   delete props.className;
 
-  return <input className={_classNames} {...props} />;
+  return <input type="search" className={_classNames} {...props} />;
 }
