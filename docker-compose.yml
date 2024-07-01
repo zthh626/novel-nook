@@ -3,7 +3,7 @@ services:
     image: node:18
     working_dir: /app
     volumes:
-      - ./frontend:/app
+      - ./:/app
     ports:
       - "3000:3000"
     environment:
