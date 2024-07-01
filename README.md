@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NovelNook
 
-## Getting Started
+This is an online bookstore application with the following features:
+- Browsing books
+- Searching books by
+    - title
+    - description
+- View book details
+- Browing authors
+- Searching authors by
+    - name
+    - bio
+- Login/Signup
+- Favoriting books
+- Managing favorites
 
-First, run the development server:
+## Technologies in this Project
+
+### Frontend
+
+- NextJS
+- Tailwind CSS
+
+### Backend
+
+- NextJS, Server Actions
+- Prisma
+- Postgres
+
+### Tooling
+
+- Docker Compose
+
+## Setup and Running Instructions
+
+Docker compose for containerization and easy project setup.
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/zthh626/novel-nook.git
+cd novel-nook
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Setup environment variables:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Modify the `.env` file in the root directory. `SECRET_KEY` is the key used for signing the JWT key change this to some secret key for security purposes. `DATABASE_URL` is pointed to the docker-compose PostgreSQL instance.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Install node modules with `npm install`
 
-## Learn More
+4. Run the application with docker-compose:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+docker-compose up
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Seed the database with `npx prisma db seed`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This command uses the `DATABASE_URL` in the `.env` file. The mock data for this seed is located at [authors.json](/prisma/seed/authors.json) and [books.json](/prisma/seed/books.json).
 
-## Deploy on Vercel
+4. Access the application at `http://localhost:3000/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Database
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The database schema has the following 4 tables:
+- Users
+- Favorites
+- Books
+- Authors
+
+For a deeper explanation view [database.md](/docs/database.md).
+
+## Design Decisions
+
+[design-decisions.md](/docs/design-decisions.md)
+
+## Authentication
+
+[authentication.md](/docs/authentication.md)
+
+## lib functions
+
+[/src/lib](/src/lib/README.md)
+
+## TODO
+
+- Misnamed `favourites` in database schema but everything else is called `favorites`.
+- `SearchInput` has quick search half implemented, the feature will have a short list of search results as the user typed.
