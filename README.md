@@ -1,15 +1,18 @@
 # NovelNook
 
+[Screenshots](/docs/images/screenshots/)
+
 This is an online bookstore application with the following features:
+
 - Browsing books
 - Searching books by
-    - title
-    - description
+  - title
+  - description
 - View book details
 - Browing authors
 - Searching authors by
-    - name
-    - bio
+  - name
+  - bio
 - Login/Signup
 - Favoriting books
 - Managing favorites
@@ -63,6 +66,7 @@ This command uses the `DATABASE_URL` in the `.env` file. The mock data for this 
 ## Database
 
 The database schema has the following 4 tables:
+
 - Users
 - Favorites
 - Books
