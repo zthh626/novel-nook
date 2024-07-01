@@ -58,11 +58,13 @@ Modify the `.env` file in the root directory. `SECRET_KEY` is the key used for s
 docker-compose up
 ```
 
-5. Seed the database with `npx prisma db seed`
+5. Migrate the database with `npx prisma db push`
+
+6. Seed the database with `npx prisma db seed`
 
 This command uses the `DATABASE_URL` in the `.env` file. The mock data for this seed is located at [authors.json](/prisma/seed/authors.json) and [books.json](/prisma/seed/books.json).
 
-4. Access the application at `http://localhost:3000/`
+7. Access the application at `http://localhost:3000/`
 
 ## Testing
 
